@@ -16,7 +16,7 @@ jobs:
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
         with:
-          environment-file: RandomForests/RF.yml
+          environment-file: RF.yml
           environment-name: RF
       - name: Install test packages
         shell: bash -l {0}
