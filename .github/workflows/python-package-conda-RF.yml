@@ -1,3 +1,4 @@
+
 name: Python Package using Conda
 on: [push]
 
@@ -8,7 +9,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
         python-version: [3.7]
     steps:
       - uses: actions/checkout@v2
@@ -17,23 +18,18 @@ jobs:
         with:
           environment-file: RandomForests/RF.yml
           environment-name: RF
-      - name: Set up conda environment
-        run: |
-          mamba env update --file binder/environment.yml
-      - run: conda --version
-      - run: which python
       - name: Install test packages
         shell: bash -l {0}
         run: |
-          python -m pip install pytest nbval
+          pip install pytest nbconvert nbformat
       - name: which python
         shell: bash -l {0}
         run: |
           which python
       - name: git info
         run: |
-          git log --name-only -1 | cat 
+          git log --name-only -1 | cat -
       - name: Test with pytest
         shell: bash -l {0}
         run: |
-          pytest .github/test_RF_notebooks.py 
+          pytest .github/test_RF_notebooks.py
