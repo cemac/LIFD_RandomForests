@@ -11,12 +11,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         python-version: [3.8]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python 3.8
-        uses: actions/setup-python@v3
-        with:
-          python-version: ${{ matrix.python-version }}
+    steps:  
       - uses: actions/checkout@v2
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
