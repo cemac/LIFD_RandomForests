@@ -1,4 +1,3 @@
-
 name: Python Package using Conda
 on: [push]
 
@@ -9,9 +8,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
-        python-version: [3.8]
-    steps:  
+        os: [ubuntu-latest]
+        python-version: [3.7]
+    steps:
       - uses: actions/checkout@v2
       - name: install mamba
         uses: mamba-org/provision-with-micromamba@main
@@ -19,17 +18,17 @@ jobs:
           environment-file: RF.yml
           environment-name: RF
       - name: Install test packages
-        shell: bash
+        shell: bash -l {0}
         run: |
           pip install pytest nbconvert nbformat
       - name: which python
-        shell: bash
+        shell: bash -l {0}
         run: |
           which python
       - name: git info
         run: |
           git log --name-only -1 | cat -
       - name: Test with pytest
-        shell: bash
+        shell: bash -l {0}
         run: |
           pytest .github/workflows/test_RF_notebooks.py
