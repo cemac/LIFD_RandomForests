@@ -37,7 +37,7 @@ You can run this notebook on your personal laptop or via the [binder](https://my
 
 **Running Locally**
 
-If you're already familiar with git, anaconda and virtual environments the environment you need to create is found in CNN.yml and the code below to install activate and launch the notebook. The .yml file has been tested on the latest linux, macOS and windows operating systems.
+If you're already familiar with git, anaconda and virtual environments the environment you need to create is found in RF.yml and the code below to install activate and launch the notebook. The .yml file has been tested on the latest linux, macOS and windows operating systems.
 
 ```bash
 git clone git@github.com:cemac/LIFD_RandomForests.git
@@ -58,4 +58,4 @@ This notebook is designed to run on a laptop with no special hardware required t
 
 ## Acknowledgements
 
-Thanks to Chetan Devas for the basis of this tutorial. This tutorial is part of the [LIFD ENV ML NOTEBOOKS](https://github.com/cemac/LIFD_ENV_ML_NOTEBOOKS) please refer to for full acknowledgements.
+Thanks to Chetan Deva for the basis of this tutorial. This tutorial is part of the [LIFD ENV ML NOTEBOOKS](https://github.com/cemac/LIFD_ENV_ML_NOTEBOOKS) please refer to for full acknowledgements.
