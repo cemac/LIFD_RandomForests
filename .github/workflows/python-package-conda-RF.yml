@@ -17,6 +17,7 @@ jobs:
       - name: install mamba
         uses: conda-incubator/setup-miniconda@v2
         with:
+          miniconda-version: "latest"
           auto-update-conda: false
           use-only-tar-bz2: true
           environment-file: RF.yml
